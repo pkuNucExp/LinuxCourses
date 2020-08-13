@@ -17,8 +17,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Template'
-copyright = '2019, Hongyi Wu(吴鸿毅)'
+project = 'LinuxCourses'
+copyright = '2020, Hongyi Wu(吴鸿毅)'
 author = 'Hongyi Wu(吴鸿毅)'
 
 # The full version, including alpha/beta/rc tags

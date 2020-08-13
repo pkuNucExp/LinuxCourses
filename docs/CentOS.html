@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
@@ -9,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>索引 &mdash; LinuxCourses 1 文档</title>
+  <title>CentOS 7 &mdash; LinuxCourses 1 文档</title>
   
 
   
@@ -36,8 +35,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
-    <link rel="index" title="索引" href="#" />
-    <link rel="search" title="搜索" href="search.html" /> 
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="虚拟机" href="VirtualBox.html" />
+    <link rel="prev" title="简介" href="README.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,9 +83,9 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="README.html">简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CentOS.html">CentOS 7</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CentOS 7</a></li>
 <li class="toctree-l1"><a class="reference internal" href="VirtualBox.html">虚拟机</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">git 与 GitHub</a></li>
 </ul>
@@ -132,12 +133,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>索引</li>
+      <li>CentOS 7</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/CentOS.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -149,11 +152,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-
-<h1 id="index">索引</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="centos-7">
+<h1>CentOS 7<a class="headerlink" href="#centos-7" title="永久链接至标题">¶</a></h1>
+<p>关于 CentOS 的安装教程，百度上非常丰富，请读者自行百度。</p>
+<p><strong>需要特别说明，本教程为了减少安装 ROOT/GEANT4 等软件的依赖库问题，安装 CentOS 时软件选择 开发及生成工作站，同时选择右侧所有的附件选项。</strong> 如下图所示。</p>
+<img alt="_images/CentOS7INSTALL.png" src="_images/CentOS7INSTALL.png" />
+<p>自动化配置脚本是在该安装选项基础上开发的，如若选择其它选项，可能造成某些软件安装缺少依赖库等问题。</p>
+<p>按照以上步骤安装好系统之后，还需要对基础依赖工具做一些安装及升级，可以下载执行我们的自动化安装脚本。</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>升级 yum 源库（第一步）</dt><dd><ul>
+<li><p><a class="reference external" href="https://github.com/wuhongyi/ScientificLinuxYumSet">https://github.com/wuhongyi/ScientificLinuxYumSet</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>软件安装脚本（第二步）</dt><dd><ul>
+<li><p><a class="reference external" href="https://github.com/wuhongyi/BasicConfiguration">https://github.com/wuhongyi/BasicConfiguration</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
 </div>
 
 
@@ -161,6 +182,15 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="VirtualBox.html" class="btn btn-neutral float-right" title="虚拟机" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="README.html" class="btn btn-neutral float-left" title="简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

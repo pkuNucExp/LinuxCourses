@@ -3,14 +3,14 @@
 .. Description: 
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
-.. Created: 五 7月 26 20:21:45 2019 (+0800)
-.. Last-Updated: 四 8月 13 20:25:30 2020 (+0800)
+.. Created: 四 8月 13 12:31:41 2020 (+0800)
+.. Last-Updated: 四 8月 13 20:25:36 2020 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 4
+..     Update #: 3
 .. URL: http://wuhongyi.cn 
 
 ##################################################
-README
+简介
 ##################################################
 
 本教程为 **中低能实验核物理** 研究中涉及的常用工具的使用介绍。
@@ -20,6 +20,7 @@ README
 
 
 
-   
+
+
 .. 
 .. README.rst ends here
