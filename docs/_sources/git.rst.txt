@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 四 8月 13 20:21:20 2020 (+0800)
-.. Last-Updated: 一 8月 31 14:39:40 2020 (+0800)
+.. Last-Updated: 一 8月 31 15:06:45 2020 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 7
+..     Update #: 9
 .. URL: http://wuhongyi.cn 
 
 ##################################################
@@ -161,10 +161,12 @@ github 创建个人主页
 GitHub 客户端
 ============================================================
 
-。。。
+前面介绍的命令行都是基于 LINUX 终端操作的。Windows/macOS 下有图形界面的操作终端，可以从 https://desktop.github.com 上下载。 
 
+具体使用可以参考以下网页
 
-
+- `GitHub的Windows客户端的使用教程 <https://www.cnblogs.com/opsprobe/p/9893325.html>`_ 
+- `gitHub客户端的安装与使用总结 <https://blog.csdn.net/qq_23375733/article/details/83015154>`_ 
 
 
 
