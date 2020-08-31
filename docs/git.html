@@ -87,9 +87,19 @@
 <li class="toctree-l1"><a class="reference internal" href="CentOS.html">CentOS 7</a></li>
 <li class="toctree-l1"><a class="reference internal" href="VirtualBox.html">虚拟机</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">git 与 GitHub</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#git">git 的使用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#github">GitHub 帐号配置</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">GitHub 客户端</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#git">git 的使用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">初始化配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">忽略文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">提交空目录</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#github">GitHub 帐号配置</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#watchstarfork">watch、star、fork 的作用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">创建仓库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">github 创建个人主页</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">GitHub 客户端</a></li>
 </ul>
 </li>
 </ul>
@@ -160,40 +170,71 @@
 <h1>git 与 GitHub<a class="headerlink" href="#git-github" title="永久链接至标题">¶</a></h1>
 <div class="section" id="git">
 <h2>git 的使用<a class="headerlink" href="#git" title="永久链接至标题">¶</a></h2>
-<p>LINUX 下配置文件位置</p>
-<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>~/.gitconfig
-</pre></div>
-</div>
-<p><strong>初始化配置</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#配置使用git仓库的人员姓名</span>
+<div class="section" id="id1">
+<h3>初始化配置<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#配置使用git仓库的人员姓名（这里使用github帐号用户名）</span>
 git config --global user.name &lt;youname&gt;
 
-<span class="c1">#配置使用git仓库的人员email</span>
+<span class="c1">#配置使用git仓库的人员email（这里使用github帐号邮箱）</span>
 git config --global user.email &lt;youemail&gt;
 
 <span class="c1">#让Git显示颜色</span>
 git config --global color.ui <span class="nb">true</span>
-
-<span class="c1">#设置编辑器</span>
-git config --global core.editor emacs
-
-<span class="c1">#别名</span>
-git config --global alias.co checkout
-git config --global alias.ci commit
-git config --global alias.st status
-git config --global alias.br branch
 </pre></div>
 </div>
-<p>。。。</p>
-<p><strong>git 提交空目录</strong></p>
-<p>需要在目录下创建 .gitkeep 文件，然后在项目的 .gitignore 中设置不忽略 .gitkeep。</p>
-<p>.gitkeep 是一个约定俗成的文件名并不会带有特殊规则。</p>
+<p>LINUX 下配置文件位置（可以查看用户的全局设置）</p>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>~/.gitconfig
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>忽略文件<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<p>在使用 Git 的过程中，有的文件比如生成的数据文件、临时文件、编译的中间文件等不要提交到代码仓库，这时就要设置相应的忽略规则，来忽略这些文件的提交。</p>
+<p>通过在项目下创建文件 <em>.gitignore</em> ，在里面添加需要忽略的文件夹及文件（如下示例）</p>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>/project/build/
+*.root
+*.m4b
+*.mca
+*.spe
+/log/
+/lib/
+build/temp/
+</pre></div>
+</div>
+<p>其中目录以 “/” 开头的为绝对路径，如前几个。不以 “/” 开头的将会忽略整个仓库中该名字的文件夹，例如最后一个。文件也同理，不指定目录将忽略所有匹配的文件。</p>
+<p>在 <em>.gitingore</em> 文件中，遵循相应的语法，在每一行指定一个忽略规则。忽略规则的语法如下：</p>
+<ul class="simple">
+<li><p>空格不匹配任意文件，可作为分隔符，可用反斜杠转义</p></li>
+<li><p># 开头的模式标识注释，可以使用反斜杠进行转义</p></li>
+<li><p>! 开头的模式标识否定，该文件将会再次被包含，如果排除了该文件的父级目录，则使用 ! 也不会再次被包含。可以使用反斜杠进行转义</p></li>
+<li><p>/ 结束的模式只匹配文件夹以及在该文件夹路径下的内容，但是不匹配该文件</p></li>
+<li><p>/ 开始的模式匹配项目根目录，如果一个模式不包含斜杠，则它匹配相对于当前 .gitignore 文件路径的内容，如果该模式不在 .gitignore 文件中，则相对于项目根目录</p></li>
+<li><p>** 匹配多级目录，可在开始，中间，结束</p></li>
+<li><p>? 通用匹配单个字符</p></li>
+<li><p>[] 通用匹配单个字符列表</p></li>
+</ul>
+<p><em>.gitignore</em> 只能忽略那些原来没有被跟踪的文件，如果某些文件已经被纳入了版本管理中，则修改 <em>.gitignore</em> 是无效的。解决方法就是先把本地缓存删除（改变成未跟踪状态），然后再提交。</p>
+</div>
+<div class="section" id="id3">
+<h3>提交空目录<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>需要在目录下创建 <em>.gitkeep</em> 文件，然后在项目的 <em>.gitignore</em> 中设置不忽略 <em>.gitkeep</em> 。</p>
+<p><em>.gitkeep</em> 是一个约定俗成的文件名并不会带有特殊规则。</p>
+</div>
 </div>
 <div class="section" id="github">
 <h2>GitHub 帐号配置<a class="headerlink" href="#github" title="永久链接至标题">¶</a></h2>
-<p>。。。</p>
-<p><strong>创建仓库</strong></p>
-<p>首先先上网站点击新建一个仓库，例如我要新建一个名为“test”的仓库，输入仓库名字，点击创建即可创建，然后就进入快速设置引导界面。如果你选择了 Initialize this repository with a README、Add .gitignore、Add a license，则会在仓库中生成相应的 README 、.gitignore 、 LICENSE 文件，跳过快速指导页面直接进入项目。如果选了以上，第一次上传之前还需要 pull 一下。</p>
+<p>首先访问 <a class="reference external" href="https://github.com/">https://github.com/</a> ，然后注册并登陆帐号。</p>
+<div class="section" id="watchstarfork">
+<h3>watch、star、fork 的作用<a class="headerlink" href="#watchstarfork" title="永久链接至标题">¶</a></h3>
+<p>在每个 github 项目的右上角，都有三个按钮,分别是 watch、star、fork。</p>
+<p>默认每一个用户都是处于 Not watching 的状态，当你选择 Watching，表示你以后会关注这个项目的所有动态，以后只要这个项目发生变动，如被别人提交了 pull request、被别人发起了 issue 等等情况，你都会在自己的个人通知中心，收到一条通知消息，如果你设置了个人邮箱，那么你的邮箱也可能收到相应的邮件。如果你不想接受这些通知，那么点击 Not Watching 即可。</p>
+<p>star 这里解释为 <strong>关注</strong> 或者 <strong>收藏</strong> 更合适，当你点击 star 表示你喜欢这个项目或者通俗点可以把他理解成朋友圈的点赞。github 里面会有一个列表，专门收集了你所有 star 过的项目，所以也可以把它理解成收藏，通过该列表可以快速访问那些项目。</p>
+<p>当选择 fork，相当于你自己有了一份原项目的拷贝，当然这个拷贝只是针对当时的项目文件，如果后续原项目文件发生改变，你必须通过其它的方式去同步。一般来说，我们不需要使用 fork 这个功能，除非有一些项目，可能存在 bug 或者可以继续优化的地方，你想帮助原项目作者去完善这个项目或者单纯的想在原来项目基础上己维护一个属于自己项目。 <strong>很多人错误地在使用 fork。很多人把 fork 当成了收藏一样的功能，其实你完全可以使用 star 来达到这个目的。</strong></p>
+<p>请记得给项目 <a class="reference external" href="https://github.com/pkuNucExp/PKUXIADAQ">https://github.com/pkuNucExp/PKUXIADAQ</a> 点击 star。</p>
+</div>
+<div class="section" id="id4">
+<h3>创建仓库<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>首先先上网站点击新建一个仓库，例如我要新建一个名为 “test” 的仓库，输入仓库名字，点击创建即可创建，然后就进入快速设置引导界面。如果你选择了 Initialize this repository with a README、Add .gitignore、Add a license，则会在仓库中生成相应的 README 、.gitignore 、 LICENSE 文件，跳过快速指导页面直接进入项目。如果选了以上，第一次上传之前还需要 pull 一下。</p>
 <p>创建项目之后会进入一个快速设置指导页面。上面提示 HTTPS、SSH 两种方式可以上传、下载。如下所示。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># HTTPS</span>
 https://github.com/wuhongyi/test.git
@@ -216,37 +257,18 @@ git remote add origin git@github.com:wuhongyi/test.git
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add <span class="o">[</span>XXX<span class="o">]</span>    <span class="c1">#添加文件到暂存区</span>
 git commit -m <span class="s2">&quot;commit message&quot;</span>    <span class="c1">#提交修改</span>
 git push -u origin master    <span class="c1">#上传到网站</span>
+<span class="c1"># 之后按照提示输入帐号、密码</span>
 </pre></div>
 </div>
-<p>项目下创建文件 .gitignore，在里面添加需要忽略的文件夹及文件</p>
-<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>/projectNCURSES/build/
-/projectROOT/build/
-/SimulationPMT/build/
-/projectG4/build/
-/projectWU/build/
-/projectWU/bin/
-/projectG4MT/build/
-/projectG4MTNeutron/build/
-/projectG4MTPhoton/build/
-/GammaSpectroscopy/build/
-/GammaSpectroscopy/source/build/
-/projectG4Visualization/build/
-*.root
-*.m4b
-*.mca
-*.spe
-/G4_lib/
-/lib/
-Authorize/Log/
-</pre></div>
 </div>
-<p>其中目录以 “/” 开头的为绝对路径，如前几个。不以 “/” 开头的将会忽略整个仓库中该名字的文件夹，例如最后一个。文件也同理，不指定目录将忽略所有匹配的文件。</p>
-<p><strong>github 创建个人主页</strong></p>
+<div class="section" id="id5">
+<h3>github 创建个人主页<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>每个用户下只能有一个 [username].github.io 的仓库</p>
 <p>发布在该仓库的 master 分支的内容即个人静态网页， 可通过 [username].github.io 访问。</p>
 </div>
-<div class="section" id="id1">
-<h2>GitHub 客户端<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="id6">
+<h2>GitHub 客户端<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>。。。</p>
 </div>
 </div>
