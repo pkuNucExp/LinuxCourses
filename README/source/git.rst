@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 四 8月 13 20:21:20 2020 (+0800)
-.. Last-Updated: 一 8月 31 15:06:45 2020 (+0800)
+.. Last-Updated: 四 9月  3 09:16:19 2020 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 9
+..     Update #: 10
 .. URL: http://wuhongyi.cn 
 
 ##################################################
@@ -170,6 +170,20 @@ GitHub 客户端
 
 
 
-   
+
+============================================================
+练习
+============================================================
+
+
+- follow 吴鸿毅帐号 https://github.com/wuhongyi
+- 给项目 https://github.com/pkuNucExp/PKUXIADAQ 点击 star
+- 给课程项目 xxxxxx 的 watch 设置成 Watching（能够及时收到更新通知，不想收到通知随时可更改成 Not Watching）  
+- 创建名字为 test 的 repository
+- 在 test 中上传一些程序片段，必须包含 .gitignore 和 README.md 文件
+- 上传完成后，对代码文件进行修改，然后再次上传
+
+  
+  
 .. 
 .. git.rst ends here
