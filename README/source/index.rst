@@ -14,8 +14,12 @@ Welcome to LINUX Courses
    CentOS.rst
    VirtualBox.rst
    git.rst
-   
+   linux.rst
+   c_cpp.rst
+   jupyter.rst
+   root_primer.rst
 
+   
 
 Indices and tables
 ==================
