@@ -164,7 +164,33 @@
 <h1>jupyter<a class="headerlink" href="#jupyter" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
 <h2>环境配置<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>这里介绍怎么配置root jupyter</p>
+<p>复制参考配置文件 <em>jupyter_notebook_config.py</em> 到个人的某个文件夹。该文件夹为您 jupyter 的根目录。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#将 8888 改成您的端口号</span>
+c.NotebookApp.port <span class="o">=</span> <span class="m">8888</span>
+</pre></div>
+</div>
+<p>如果需要设置访问密码</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#设置访问密码 本设置的密码为 wuhongyi ，需要修改成您自己的密码</span>
+c.NotebookApp.password <span class="o">=</span> u<span class="s1">&#39;sha1:b4312c4fb8b5:e239f220fa9fc697668ec3dc71b4180ee8854dac&#39;</span>
+</pre></div>
+</div>
+<p>如果没有设置密码（将该行设置注释掉），那么在访问网页的时候，会要求输入 token ，token 在终端的输出信息中有。</p>
+<p>建议配置个人密码，方便访问。生成密码的方式如下：</p>
+<p>打开ipython, 创建一个密文密码</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>In <span class="o">[</span><span class="m">1</span><span class="o">]</span>: from notebook.auth import passwd
+
+In <span class="o">[</span><span class="m">2</span><span class="o">]</span>: passwd<span class="o">()</span>
+Enter password:
+Verify password:
+Out<span class="o">[</span><span class="m">2</span><span class="o">]</span>: <span class="s1">&#39;sha1:ecff44b879cd:35b5b64072d286b66f0d8f84a41dbf7515d21755&#39;</span>
+</pre></div>
+</div>
+<p>把生成的密文 <em>sha1:ec…</em> 复制下来替换成以上配置文件中的密码。</p>
+<p>完成以上配置之后，即可启动 jupyter。将终端进入到放置 <em>jupyter_notebook_config.py</em> 文件的目录。然后执行以下命令：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root --notebook
+</pre></div>
+</div>
+<p>之后，您可在任意电脑中通过 <em>127.0.0.1:8888</em> 来本地访问。（其中 8888 替换成您的端口号）</p>
 </div>
 <div class="section" id="id2">
 <h2>示例程序<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
