@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 四 8月 13 12:30:25 2020 (+0800)
-.. Last-Updated: 四 9月 17 15:17:08 2020 (+0800)
+.. Last-Updated: 四 9月 17 16:20:40 2020 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 7
+..     Update #: 9
 .. URL: http://wuhongyi.cn 
 
 ##################################################
@@ -55,16 +55,21 @@ CentOS 7
 - IP
     - 162.105.54.124
 - 用户名
-    - 请联系吴鸿毅创建
-
+    - data
+     
 访问方式
 
 .. code-block:: cpp
 		
-  ssh -Y -p 52413 data@cn-cd-dx.sakurafrp.com 
+  ssh -Y -p 15716 data@cn-zz-bgp.sakurafrp.com 
 
 
-      
+jupyter
+
+- https://cn-zz-bgp.sakurafrp.com:35822
+   - 密码联系吴鸿毅
+
+  
      
 .. 
 .. CentOS.rst ends here
