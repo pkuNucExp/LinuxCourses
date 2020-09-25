@@ -17,4 +17,4 @@ make clean
 
 touch ../docs/.nojekyll
 
-#cp source/README.md .
+cp source/README.rst ../

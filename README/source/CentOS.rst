@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 四 8月 13 12:30:25 2020 (+0800)
-.. Last-Updated: 四 9月 17 16:20:40 2020 (+0800)
+.. Last-Updated: 五 9月 25 15:02:16 2020 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 9
+..     Update #: 10
 .. URL: http://wuhongyi.cn 
 
 ##################################################
@@ -43,7 +43,7 @@ CentOS 7
 
 我们基于 Oracle VM VirtvalBox 配置了一个 CentOS 7 镜像，具体下载访问
 
-`虚拟机 <VirtualBox.rst>`_ 
+`虚拟机 <https://pkunucexp.github.io/LinuxCourses/VirtualBox.html>`_ 
 
 
 ============================================================
