@@ -175,6 +175,7 @@ c.NotebookApp.port <span class="o">=</span> <span class="m">8888</span>
 c.NotebookApp.password <span class="o">=</span> u<span class="s1">&#39;sha1:b4312c4fb8b5:e239f220fa9fc697668ec3dc71b4180ee8854dac&#39;</span>
 </pre></div>
 </div>
+<img alt="_images/jupyter_config.png" src="_images/jupyter_config.png" />
 <p>如果没有设置密码（将该行设置注释掉），那么在访问网页的时候，会要求输入 token ，token 在终端的输出信息中有。</p>
 <p>建议配置个人密码，方便访问。生成密码的方式如下：</p>
 <p>打开ipython, 创建一个密文密码</p>
@@ -187,6 +188,7 @@ Out<span class="o">[</span><span class="m">2</span><span class="o">]</span>: <sp
 </pre></div>
 </div>
 <p>把生成的密文 <em>sha1:ec…</em> 复制下来替换成以上配置文件中的密码。</p>
+<img alt="_images/jupyter_ipython.png" src="_images/jupyter_ipython.png" />
 <p>完成以上配置之后，即可启动 jupyter。将终端进入到放置 <em>jupyter_notebook_config.py</em> 文件的目录。然后执行以下命令：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root --notebook
 </pre></div>
