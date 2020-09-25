@@ -4,16 +4,16 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 四 8月 13 12:33:41 2020 (+0800)
-.. Last-Updated: 一 8月 31 13:45:40 2020 (+0800)
+.. Last-Updated: 五 9月 25 19:17:58 2020 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 6
+..     Update #: 7
 .. URL: http://wuhongyi.cn 
 
 ##################################################
 虚拟机
 ##################################################
 
-我们提供基于 Oracle VM VirtvalBox（https://www.virtualbox.org/） 的虚拟机，用户可自行下载安装。
+我们提供基于 Oracle VM VirtvalBox（https://www.virtualbox.org/） 的虚拟机，用户可自行下载安装。 **建议安装最新版本。**
 
 ============================================================
 镜像文件下载
@@ -34,10 +34,41 @@ CentOS 7 虚拟机镜像文件版本历史
 
 虚拟机文件下载 http://gofile.me/42AHM/AsfMrkCD5 提取密码 *pku*
 
+或者使用由吴鸿毅提供的U盘中拷贝。
 
-关于 VirtvalBox 中的镜像加载问题，请自行百度。
 
 虚拟机用户名 *data*，密码 *123456*
+
+
+关于 VirtvalBox 中的镜像加载问题，请自行百度。这里我们提供一个简单的操作教程：
+
+首先打开 Oracle VM VirtvalBox，选择 **管理->导入虚拟电脑** ，操作入下图所示：
+
+.. image:: /_static/img/VB_CENTOS1.png
+
+然后，选择镜像文件（后缀为 ova 文件），点击下一步，
+	   
+.. image:: /_static/img/VB_CENTOS2.png
+
+双击 **处理器** 、 **内存** 等，可以修改设置，建议根据自己电脑的硬件参数，分配一半或者以上资源给它。默认虚拟电脑位置下拉，可以设置系统的存储位置（通过选择 *其它* 来修改路径）	  
+
+.. image:: /_static/img/VB_CENTOS3.png
+
+配置好之后，点击右上角的绿色按钮“启动”，然后等待，
+	   
+.. image:: /_static/img/VB_CENTOS4.png
+
+直到界面出现以下登陆界面，	   
+
+.. image:: /_static/img/VB_CENTOS5.png
+	   
+输入密码，即可进入操作系统。
+	   
+.. image:: /_static/img/VB_CENTOS6.png
+	   
+	   
+**关于如何全屏显示等设置，请大家自行摸索。大家可以使劲折腾该操作系统，玩坏了删除之后重新加载镜像文件即可。**	   
+
 
 
    
