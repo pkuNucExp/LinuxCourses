@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 四 8月 13 20:21:20 2020 (+0800)
-.. Last-Updated: 四 9月 17 21:57:43 2020 (+0800)
+.. Last-Updated: 三 9月 30 09:26:53 2020 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 13
+..     Update #: 14
 .. URL: http://wuhongyi.cn 
 
 ##################################################
@@ -143,11 +143,13 @@ star 这里解释为 **关注** 或者 **收藏** 更合适，当你点击 star 
 
 .. code:: bash
    
-   git add [XXX]    #添加文件到暂存区
+   git add [XXX]    #添加文件到暂存区    万能命令 git add --all
    git commit -m "commit message"    #提交修改
    git push -u origin master    #上传到网站
    # 之后按照提示输入帐号、密码
 
+   git pull origin master  #将远程仓库同步到本地
+   
 ----------------------------------------------------------------------
 github 创建个人主页
 ----------------------------------------------------------------------

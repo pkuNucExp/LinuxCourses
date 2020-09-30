@@ -260,10 +260,12 @@ git remote add origin git@github.com:wuhongyi/test.git
 </pre></div>
 </div>
 <p>仓库内容的修改和发布：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add <span class="o">[</span>XXX<span class="o">]</span>    <span class="c1">#添加文件到暂存区</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add <span class="o">[</span>XXX<span class="o">]</span>    <span class="c1">#添加文件到暂存区    万能命令 git add --all</span>
 git commit -m <span class="s2">&quot;commit message&quot;</span>    <span class="c1">#提交修改</span>
 git push -u origin master    <span class="c1">#上传到网站</span>
 <span class="c1"># 之后按照提示输入帐号、密码</span>
+
+git pull origin master  <span class="c1">#将远程仓库同步到本地</span>
 </pre></div>
 </div>
 </div>
